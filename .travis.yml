@@ -5,7 +5,6 @@ arch:
 go:
   - 1.16.x
 script:
-  - minikube start
   - GO_FLAGS="GOOS=linux GOARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on" make install-tools
   - GO_FLAGS="GOOS=linux GOARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on" make
-  - go test -v ./...
+ 
