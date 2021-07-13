@@ -6,7 +6,7 @@ go:
   - 1.16.x
 before_install:
   - make install-sdk
-  - minikube
+  
   
 script:
   - make install-tools
