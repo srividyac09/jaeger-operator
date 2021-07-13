@@ -4,7 +4,12 @@ arch:
   - ppc64le
 go:
   - 1.16.x
+before_install:
+  - make install-sdk
+  - go modules
+  - minikube
+  
 script:
-  - make build
+  - minikube start
   
  
