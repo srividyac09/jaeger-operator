@@ -8,5 +8,6 @@ go:
 script:
   - make install-tools
   - make 
+  - make test
   
  
