@@ -9,6 +9,7 @@ before_install:
   - minikube
   
 script:
-  - minikube start
+  - make install-tools
+  - make
   
  
