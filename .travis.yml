@@ -10,6 +10,6 @@ before_install:
   
 script:
   - make install-tools
-  - make
+  - make build test
   
  
