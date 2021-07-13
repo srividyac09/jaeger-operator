@@ -6,7 +6,8 @@ go:
   - 1.16.5
 
 script:
-  - make 
+  - make install-sdk
+  - make build
   - make test
   
  
