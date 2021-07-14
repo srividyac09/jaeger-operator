@@ -7,11 +7,11 @@ go:
   - 1.16.5
 services:
   - docker
-  - kubectl
+  
 env:
 - CHANGE_MINIKUBE_NONE_USER=true
 before_script:
-- systemd enable docker.service
+- systemctl enable docker.service
 - systemctl enable kubelet.service
 - sudo apt-get install -y conntrack
 - curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/v1.7.0/bin/linux/ppc64le/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
