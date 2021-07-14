@@ -11,8 +11,8 @@ services:
 env:
 - CHANGE_MINIKUBE_NONE_USER=true
 before_script:
-- systemctl enable docker.service
-- systemctl enable kubelet.service
+- sudo systemctl enable docker.service
+- sudo systemctl enable kubelet.service
 - sudo apt-get install -y conntrack
 - curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/v1.7.0/bin/linux/ppc64le/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
 - curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-ppc64le && chmod +x minikube && sudo mv minikube /usr/local/bin/
