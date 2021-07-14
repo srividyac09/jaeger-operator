@@ -6,7 +6,7 @@ arch:
 go:
   - 1.16.5
 services:
-  - docker
+  - systemctl enable docker.service
 env:
 - CHANGE_MINIKUBE_NONE_USER=true
 before_script:
