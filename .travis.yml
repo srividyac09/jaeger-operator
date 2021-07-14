@@ -9,5 +9,6 @@ script:
   - make install-sdk
   - GO_FLAGS="GOOS=linux GOARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on" make install-tools
   - GO_FLAGS="GOOS=linux GOARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on" make
+  - make test
   
  
