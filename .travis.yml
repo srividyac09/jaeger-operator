@@ -1,13 +1,18 @@
 language: go
 sudo: required
-dist: bionic
+
 arch:
   - ppc64le
 go:
   - 1.16.5
+env:
+  matrix:
+  - OS_TYPE=ubi8.3  OS_VERSION=6
+  
 services:
   - docker
-
+before_install:
+  - docker run -it --name jaeger  registry.access.redhat.com/ubi8/ubi:8.3 bash
 
 
 
