@@ -13,8 +13,6 @@ services:
   - docker
 
 
-
-
 script:
   - make install
   - make test
