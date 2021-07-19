@@ -1,19 +1,18 @@
 # Build the manager binary
 FROM golang:1.16 as builder
- environment:
-      BUILDX_PLATFORMS: linux/ppc64le
+ 
 
 COPY . /go/src/github.com/jaegertracing/jaeger-operator/
 WORKDIR /go/src/github.com/jaegertracing/jaeger-operator
 
 # cache deps before building and copying source so that we don't need to re-download as much
 # and so that source changes don't invalidate our downloaded layer
-RUN go mod download
+#RUN go mod download
 
 # Build
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 GO111MODULE=on go build -o ./uiconfig -a ./tests/assert-jobs/uiconfig/main.go
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 GO111MODULE=on go build -o ./reporter -a ./tests/assert-jobs/reporter/main.go
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 GO111MODULE=on go build -o ./query -a ./tests/assert-jobs/query/main.go
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=ppc64le GO111MODULE=on go build -o ./uiconfig -a ./tests/assert-jobs/uiconfig/main.go
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=ppc64le GO111MODULE=on go build -o ./reporter -a ./tests/assert-jobs/reporter/main.go
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=ppc64le GO111MODULE=on go build -o ./query -a ./tests/assert-jobs/query/main.go
 
 FROM scratch
 WORKDIR /
