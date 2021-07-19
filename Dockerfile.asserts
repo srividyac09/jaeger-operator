@@ -1,5 +1,7 @@
 # Build the manager binary
-FROM --platform=${BUILDPLATFORM:-linux/ppc64le} golang:1.16 as builder
+FROM golang:1.16 as builder
+ environment:
+      BUILDX_PLATFORMS: linux/ppc64le
 
 COPY . /go/src/github.com/jaegertracing/jaeger-operator/
 WORKDIR /go/src/github.com/jaegertracing/jaeger-operator
