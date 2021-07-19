@@ -4,7 +4,7 @@ sudo: required
 arch:
   - ppc64le
 go:
-  - 1.16.5
+  - 1.15.5
 env:
   matrix:
   - OS_TYPE=ubi8.3  
@@ -17,6 +17,6 @@ script:
   - make install-sdk
   - GO_FLAGS="GOOS=linux GOARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on" make install-tools
   - GO_FLAGS="GOOS=linux GOARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on" make
-  - make test
+  - GO_FLAGS="GOOS=linux GOARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on" make test
   
  
